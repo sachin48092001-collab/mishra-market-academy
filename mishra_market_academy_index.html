@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mishra Market Academy — learn stock market basics, technical analysis, price action, trading psychology and risk management in Hindi and English.">
+  <meta name="theme-color" content="#101c2c">
+  <title>Mishra Market Academy | Learn the Market. Understand the Risk.</title>
+  <style>
+    :root {
+      --navy:#101c2c; --navy2:#17283d; --gold:#e3b65b; --cream:#f7f5ef;
+      --ink:#172235; --muted:#667085; --white:#fff; --line:#e7e8eb;
+      --green:#16845b; --soft:#eef4f1; --radius:18px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif; color:var(--ink); background:#fff; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1120px, calc(100% - 40px)); margin:auto; }
+    header { position:sticky; top:0; z-index:20; background:rgba(16,28,44,.97); color:#fff; border-bottom:1px solid rgba(255,255,255,.1); backdrop-filter:blur(12px); }
+    .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.04em; }
+    .brand-mark { width:42px; height:42px; display:grid; place-items:center; border:1px solid var(--gold); color:var(--gold); border-radius:12px; font-size:20px; }
+    .brand-name { line-height:1.15; font-size:14px; }
+    .brand-name span { display:block; color:var(--gold); font-size:11px; letter-spacing:.16em; margin-top:4px; }
+    .nav-links { display:flex; align-items:center; gap:23px; font-size:13px; color:#e4e9f0; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-actions { display:flex; align-items:center; gap:10px; }
+    .lang { border:1px solid rgba(255,255,255,.35); background:transparent; color:white; padding:9px 12px; border-radius:999px; cursor:pointer; font-weight:700; }
+    .menu-btn { display:none; background:transparent; border:1px solid #617084; color:white; border-radius:9px; padding:8px 11px; }
+    .hero { color:white; background:radial-gradient(circle at 82% 18%,rgba(227,182,91,.17),transparent 27%),linear-gradient(120deg,var(--navy),#1b3048); padding:88px 0 82px; overflow:hidden; }
+    .hero-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:50px; align-items:center; }
+    .eyebrow { color:var(--gold); font-weight:800; font-size:12px; letter-spacing:.18em; text-transform:uppercase; }
+    h1 { font-size:clamp(38px,6vw,66px); line-height:1.06; letter-spacing:-.045em; margin:18px 0; max-width:720px; }
+    h1 em { color:var(--gold); font-style:normal; }
+    .hero p { color:#d0d8e2; font-size:17px; max-width:610px; margin:0 0 28px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:13px 19px; border-radius:10px; font-weight:800; font-size:14px; transition:.2s; }
+    .btn-gold { background:var(--gold); color:#172235; }
+    .btn-gold:hover { transform:translateY(-2px); filter:brightness(1.05); }
+    .btn-outline { border:1px solid rgba(255,255,255,.4); color:white; margin-left:9px; }
+    .hero-note { color:#aebccc; font-size:12px; margin-top:20px; }
+    .chart-card { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:24px; padding:24px; box-shadow:0 25px 70px rgba(0,0,0,.18); }
+    .chart-top { display:flex; justify-content:space-between; color:#d9e1ea; font-size:12px; }
+    .chart-label { color:var(--gold); font-weight:800; letter-spacing:.1em; font-size:11px; }
+    .chart-svg { width:100%; margin:18px 0 8px; }
+    .chart-legend { display:flex; gap:18px; color:#c2ccd7; font-size:11px; }
+    .dot { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:5px; background:var(--gold); }
+    .dot.green { background:#47c48d; }
+    section { padding:76px 0; }
+    .section-head { max-width:680px; margin-bottom:34px; }
+    .section-head h2 { font-size:clamp(28px,4vw,40px); line-height:1.15; letter-spacing:-.03em; margin:9px 0 12px; }
+    .section-head p { color:var(--muted); margin:0; }
+    .kicker { color:#9a7126; font-weight:800; font-size:11px; letter-spacing:.16em; text-transform:uppercase; }
+    .pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card { border:1px solid var(--line); border-radius:var(--radius); padding:24px; background:white; }
+    .card-icon { width:44px; height:44px; border-radius:13px; display:grid; place-items:center; background:#f7f0df; color:#8a641e; font-size:21px; margin-bottom:18px; }
+    .card h3 { margin:0 0 8px; font-size:18px; }
+    .card p { color:var(--muted); margin:0; font-size:14px; }
+    .learning { background:var(--cream); }
+    .course-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .course { overflow:hidden; padding:0; }
+    .course-band { height:8px; background:var(--gold); }
+    .course-body { padding:23px; }
+    .level { display:inline-block; color:#7b5b1e; background:#f8efd9; border-radius:999px; padding:5px 9px; font-size:10px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .course h3 { margin:13px 0 8px; }
+    .course ul { color:var(--muted); font-size:13px; padding-left:18px; margin:12px 0 0; }
+    .text-link { display:inline-block; margin-top:17px; color:#8b641e; font-weight:800; font-size:13px; }
+    .principles { display:grid; grid-template-columns:.9fr 1.1fr; gap:55px; align-items:center; }
+    .principle-box { background:var(--navy); color:white; border-radius:22px; padding:30px; }
+    .principle-box h3 { font-size:24px; margin:0 0 10px; }
+    .principle-box p { color:#cbd5df; margin:0; }
+    .principle-list { display:grid; gap:18px; }
+    .principle { display:flex; gap:14px; }
+    .check { flex:0 0 28px; height:28px; border-radius:50%; background:var(--soft); color:var(--green); display:grid; place-items:center; font-weight:900; }
+    .principle strong { display:block; margin-bottom:3px; }
+    .principle span { color:var(--muted); font-size:14px; }
+    .cta { background:var(--navy); color:white; text-align:center; padding:64px 24px; border-radius:24px; }
+    .cta h2 { font-size:clamp(28px,4vw,40px); margin:0 0 12px; }
+    .cta p { color:#cbd5df; margin:0 auto 24px; max-width:600px; }
+    footer { background:#0b1420; color:#dce3eb; padding:38px 0 24px; }
+    .footer-row { display:flex; justify-content:space-between; align-items:flex-start; gap:30px; }
+    footer p { color:#9eacbc; font-size:12px; max-width:620px; }
+    .footer-links { display:flex; gap:18px; flex-wrap:wrap; font-size:12px; }
+    .copyright { border-top:1px solid #263548; margin-top:26px; padding-top:18px; color:#8c9bad; font-size:11px; }
+    .disclaimer { background:#fff8e8; border:1px solid #f0dfb8; color:#71551d; border-radius:12px; padding:14px 16px; font-size:12px; margin-top:20px; }
+    @media (max-width:850px) {
+      .nav-links { display:none; position:absolute; top:76px; left:0; right:0; padding:18px 22px 22px; background:var(--navy); flex-direction:column; align-items:flex-start; }
+      .nav-links.open { display:flex; }
+      .menu-btn { display:block; }
+      .hero-grid,.principles { grid-template-columns:1fr; }
+      .hero { padding:65px 0; }
+      .chart-card { max-width:600px; }
+      .pillars,.course-grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width:560px) {
+      .wrap { width:min(100% - 30px,1120px); }
+      .pillars,.course-grid { grid-template-columns:1fr; }
+      section { padding:58px 0; }
+      .hero p { font-size:15px; }
+      .btn { width:100%; margin:5px 0; }
+      .btn-outline { margin-left:0; }
+      .footer-row { flex-direction:column; }
+      .chart-card { padding:17px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Mishra Market Academy home">
+      <div class="brand-mark">M</div>
+      <div class="brand-name">MISHRA <span>MARKET ACADEMY</span></div>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" data-en="About" data-hi="हमारे बारे में">About</a>
+      <a href="#learn" data-en="Learning" data-hi="सीखें">Learning</a>
+      <a href="#principles" data-en="Our approach" data-hi="हमारा तरीका">Our approach</a>
+      <a href="#contact" data-en="Contact" data-hi="संपर्क">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang" id="langToggle" type="button" aria-label="Switch language">हिंदी</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow" data-en="Stock market education · Hindi & English" data-hi="शेयर बाज़ार की शिक्षा · हिंदी और अंग्रेज़ी">Stock market education · Hindi & English</div>
+        <h1 data-en="Learn the market.<br><em>Understand the risk.</em>" data-hi="बाज़ार सीखें।<br><em>जोखिम समझें।</em>">Learn the market.<br><em>Understand the risk.</em></h1>
+        <p data-en="Build a clear foundation in the stock market, understand charts and price action, and develop disciplined decision-making — one lesson at a time." data-hi="शेयर बाज़ार की मजबूत समझ बनाएं, चार्ट और प्राइस एक्शन सीखें, और अनुशासित फैसले लेना विकसित करें — एक-एक पाठ के साथ।">Build a clear foundation in the stock market, understand charts and price action, and develop disciplined decision-making — one lesson at a time.</p>
+        <a class="btn btn-gold" href="#learn" data-en="Explore learning paths" data-hi="सीखने के विषय देखें">Explore learning paths</a>
+        <a class="btn btn-outline" href="#about" data-en="Our learning philosophy" data-hi="हमारी सीखने की सोच">Our learning philosophy</a>
+        <div class="hero-note" data-en="Education first. No guaranteed returns. No shortcuts." data-hi="पहले शिक्षा। मुनाफ़े की कोई गारंटी नहीं। कोई शॉर्टकट नहीं।">Education first. No guaranteed returns. No shortcuts.</div>
+      </div>
+      <div class="chart-card" aria-label="Illustrative market chart">
+        <div class="chart-top"><span>MARKET STUDY / 01</span><span class="chart-label">LEARN • ANALYSE • IMPROVE</span></div>
+        <svg class="chart-svg" viewBox="0 0 480 250" role="img" aria-label="Illustrative candlestick chart">
+          <g stroke="rgba(255,255,255,.12)" stroke-width="1">
+            <path d="M0 35H480 M0 85H480 M0 135H480 M0 185H480 M0 235H480"/>
+            <path d="M60 0V250 M140 0V250 M220 0V250 M300 0V250 M380 0V250 M460 0V250"/>
+          </g>
+          <path d="M10 195 C65 180 80 205 125 160 S190 155 225 125 S285 145 320 95 S385 110 465 40" fill="none" stroke="#e3b65b" stroke-width="3" stroke-linecap="round"/>
+          <g stroke-width="3">
+            <path d="M43 105V174 M78 125V197 M113 103V158 M148 80V144 M183 100V166 M218 63V126 M253 83V148 M288 55V117 M323 38V105 M358 51V126 M393 25V91 M428 18V72" stroke="#47c48d"/>
+          </g>
+          <g>
+            <rect x="35" y="125" width="16" height="31" rx="2" fill="#47c48d"/><rect x="70" y="145" width="16" height="27" rx="2" fill="#d66b69"/>
+            <rect x="105" y="117" width="16" height="27" rx="2" fill="#47c48d"/><rect x="140" y="96" width="16" height="31" rx="2" fill="#47c48d"/>
+            <rect x="175" y="119" width="16" height="28" rx="2" fill="#d66b69"/><rect x="210" y="77" width="16" height="35" rx="2" fill="#47c48d"/>
+            <rect x="245" y="101" width="16" height="32" rx="2" fill="#d66b69"/><rect x="280" y="69" width="16" height="33" rx="2" fill="#47c48d"/>
+            <rect x="315" y="53" width="16" height="33" rx="2" fill="#47c48d"/><rect x="350" y="70" width="16" height="37" rx="2" fill="#d66b69"/>
+            <rect x="385" y="39" width="16" height="34" rx="2" fill="#47c48d"/><rect x="420" y="30" width="16" height="31" rx="2" fill="#47c48d"/>
+          </g>
+        </svg>
+        <div class="chart-legend"><span><i class="dot"></i> Price movement</span><span><i class="dot green"></i> Illustrative candles</span></div>
+        <div class="hero-note">Illustration for learning only — not a live market chart.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker" data-en="A practical learning space" data-hi="सीखने की एक व्यावहारिक जगह">A practical learning space</div>
+        <h2 data-en="Understand concepts before taking decisions." data-hi="फैसले लेने से पहले कॉन्सेप्ट समझें।">Understand concepts before taking decisions.</h2>
+        <p data-en="Mishra Market Academy is planned as an accessible learning space for people who want to understand how markets work — from the first market term to more structured chart analysis." data-hi="मिश्रा मार्केट अकादमी उन लोगों के लिए एक सरल सीखने का मंच है जो बाज़ार को समझना चाहते हैं — शुरुआती शब्दों से लेकर व्यवस्थित चार्ट विश्लेषण तक।">Mishra Market Academy is planned as an accessible learning space for people who want to understand how markets work — from the first market term to more structured chart analysis.</p>
+      </div>
+      <div class="pillars">
+        <article class="card"><div class="card-icon">◎</div><h3 data-en="Clear fundamentals" data-hi="बुनियादी समझ">Clear fundamentals</h3><p data-en="Learn market structure, exchanges, orders, investing terms and how trades work." data-hi="मार्केट स्ट्रक्चर, एक्सचेंज, ऑर्डर, निवेश के शब्द और ट्रेड कैसे काम करते हैं, सीखें।">Learn market structure, exchanges, orders, investing terms and how trades work.</p></article>
+        <article class="card"><div class="card-icon">⌁</div><h3 data-en="Chart understanding" data-hi="चार्ट की समझ">Chart understanding</h3><p data-en="Explore candlesticks, trends, support and resistance, volume and price action." data-hi="कैंडलस्टिक, ट्रेंड, सपोर्ट-रेजिस्टेंस, वॉल्यूम और प्राइस एक्शन समझें।">Explore candlesticks, trends, support and resistance, volume and price action.</p></article>
+        <article class="card"><div class="card-icon">◇</div><h3 data-en="Disciplined process" data-hi="अनुशासित प्रक्रिया">Disciplined process</h3><p data-en="Study risk management, trading plans, journaling and trading psychology." data-hi="रिस्क मैनेजमेंट, ट्रेडिंग प्लान, जर्नलिंग और ट्रेडिंग साइकोलॉजी सीखें।">Study risk management, trading plans, journaling and trading psychology.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="learning" id="learn">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker" data-en="Learning paths" data-hi="सीखने के रास्ते">Learning paths</div>
+        <h2 data-en="Start with the basics. Build step by step." data-hi="बुनियाद से शुरू करें। धीरे-धीरे आगे बढ़ें।">Start with the basics. Build step by step.</h2>
+        <p data-en="A suggested curriculum for beginners and intermediate learners. Lessons can be added here as the academy grows." data-hi="शुरुआती और इंटरमीडिएट सीखने वालों के लिए सुझाया गया पाठ्यक्रम। अकादमी के बढ़ने के साथ यहां नए पाठ जोड़े जा सकते हैं।">A suggested curriculum for beginners and intermediate learners. Lessons can be added here as the academy grows.</p>
+      </div>
+      <div class="course-grid">
+        <article class="card course"><div class="course-band"></div><div class="course-body"><span class="level" data-en="Beginner" data-hi="शुरुआती">Beginner</span><h3 data-en="Stock Market Foundations" data-hi="शेयर बाज़ार की बुनियाद">Stock Market Foundations</h3><p data-en="Understand the market from zero." data-hi="शून्य से शेयर बाज़ार को समझें।">Understand the market from zero.</p><ul><li data-en="What is the stock market?" data-hi="शेयर बाज़ार क्या है?">What is the stock market?</li><li data-en="NSE, BSE and indices" data-hi="NSE, BSE और इंडेक्स">NSE, BSE and indices</li><li data-en="Demat account and order types" data-hi="डीमैट अकाउंट और ऑर्डर के प्रकार">Demat account and order types</li></ul><a class="text-link" href="#contact" data-en="Coming soon →" data-hi="जल्द आ रहा है →">Coming soon →</a></div></article>
+        <article class="card course"><div class="course-band" style="background:#6b9b89"></div><div class="course-body"><span class="level" data-en="Beginner → Intermediate" data-hi="शुरुआती → इंटरमीडिएट">Beginner → Intermediate</span><h3 data-en="Technical Analysis" data-hi="टेक्निकल एनालिसिस">Technical Analysis</h3><p data-en="Read charts with a structured approach." data-hi="व्यवस्थित तरीके से चार्ट पढ़ना सीखें।">Read charts with a structured approach.</p><ul><li data-en="Candlestick patterns" data-hi="कैंडलस्टिक पैटर्न">Candlestick patterns</li><li data-en="Trend and market structure" data-hi="ट्रेंड और मार्केट स्ट्रक्चर">Trend and market structure</li><li data-en="Support, resistance and volume" data-hi="सपोर्ट, रेजिस्टेंस और वॉल्यूम">Support, resistance and volume</li></ul><a class="text-link" href="#contact" data-en="Coming soon →" data-hi="जल्द आ रहा है →">Coming soon →</a></div></article>
+        <article class="card course"><div class="course-band" style="background:#7189b6"></div><div class="course-body"><span class="level" data-en="Intermediate" data-hi="इंटरमीडिएट">Intermediate</span><h3 data-en="Price Action & Risk" data-hi="प्राइस एक्शन और रिस्क">Price Action & Risk</h3><p data-en="Develop a repeatable decision-making process." data-hi="फैसले लेने की दोहराई जा सकने वाली प्रक्रिया बनाएं।">Develop a repeatable decision-making process.</p><ul><li data-en="Liquidity and key levels" data-hi="लिक्विडिटी और महत्वपूर्ण लेवल">Liquidity and key levels</li><li data-en="Risk-reward and position sizing" data-hi="रिस्क-रिवॉर्ड और पोज़िशन साइज़िंग">Risk-reward and position sizing</li><li data-en="Trading journal and psychology" data-hi="ट्रेडिंग जर्नल और साइकोलॉजी">Trading journal and psychology</li></ul><a class="text-link" href="#contact" data-en="Coming soon →" data-hi="जल्द आ रहा है →">Coming soon →</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="principles">
+    <div class="wrap principles">
+      <div class="principle-box">
+        <div class="eyebrow" data-en="The academy mindset" data-hi="अकादमी की सोच">The academy mindset</div>
+        <h3 data-en="Knowledge first. Risk always." data-hi="पहले ज्ञान। हमेशा रिस्क का ध्यान।">Knowledge first. Risk always.</h3>
+        <p data-en="Markets involve uncertainty. Learning should help you ask better questions, not promise easy profits." data-hi="बाज़ार में अनिश्चितता होती है। सीखने का उद्देश्य बेहतर सवाल पूछना है, आसान मुनाफ़े का वादा करना नहीं।">Markets involve uncertainty. Learning should help you ask better questions, not promise easy profits.</p>
+      </div>
+      <div class="principle-list">
+        <div class="principle"><div class="check">✓</div><div><strong data-en="No profit promises" data-hi="मुनाफ़े का कोई वादा नहीं">No profit promises</strong><span data-en="No strategy or lesson can guarantee a trading outcome." data-hi="कोई रणनीति या पाठ ट्रेडिंग के नतीजे की गारंटी नहीं देता।">No strategy or lesson can guarantee a trading outcome.</span></div></div>
+        <div class="principle"><div class="check">✓</div><div><strong data-en="Risk management matters" data-hi="रिस्क मैनेजमेंट ज़रूरी है">Risk management matters</strong><span data-en="Understand possible losses before thinking about potential gains." data-hi="संभावित मुनाफ़े से पहले संभावित नुकसान समझें।">Understand possible losses before thinking about potential gains.</span></div></div>
+        <div class="principle"><div class="check">✓</div><div><strong data-en="Learn, practise, review" data-hi="सीखें, अभ्यास करें, समीक्षा करें">Learn, practise, review</strong><span data-en="Use examples and paper trading to practise before risking real money." data-hi="असली पैसे का जोखिम लेने से पहले उदाहरणों और पेपर ट्रेडिंग से अभ्यास करें।">Use examples and paper trading to practise before risking real money.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:10px">
+    <div class="wrap">
+      <div class="cta">
+        <div class="eyebrow" data-en="Your learning journey starts here" data-hi="आपकी सीखने की यात्रा यहां से शुरू होती है">Your learning journey starts here</div>
+        <h2 data-en="Build understanding, one lesson at a time." data-hi="एक-एक पाठ के साथ अपनी समझ बढ़ाएं।">Build understanding, one lesson at a time.</h2>
+        <p data-en="New lessons and learning resources will be added as the academy develops. Check back soon." data-hi="अकादमी के विकसित होने के साथ नए पाठ और सीखने के संसाधन जोड़े जाएंगे। जल्द फिर आएं।">New lessons and learning resources will be added as the academy develops. Check back soon.</p>
+        <a class="btn btn-gold" href="#home" data-en="Back to top ↑" data-hi="ऊपर जाएं ↑">Back to top ↑</a>
+      </div>
+      <div class="disclaimer" data-en="Educational content only. This website does not provide investment advice, stock recommendations, buy/sell calls or guaranteed returns. Stock market investments are subject to market risks. Do your own research and consult a qualified professional where appropriate." data-hi="यह सामग्री केवल शिक्षा के उद्देश्य से है। यह वेबसाइट निवेश सलाह, शेयर सुझाव, खरीदने/बेचने के संकेत या मुनाफ़े की गारंटी नहीं देती। शेयर बाज़ार में निवेश जोखिमों के अधीन है। स्वयं शोध करें और ज़रूरत पड़ने पर योग्य विशेषज्ञ से सलाह लें।">Educational content only. This website does not provide investment advice, stock recommendations, buy/sell calls or guaranteed returns. Stock market investments are subject to market risks. Do your own research and consult a qualified professional where appropriate.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div><div class="brand"><div class="brand-mark">M</div><div class="brand-name">MISHRA <span>MARKET ACADEMY</span></div></div><p data-en="A learning-first platform for stock market education in Hindi and English." data-hi="हिंदी और अंग्रेज़ी में शेयर बाज़ार की शिक्षा के लिए सीखने पर केंद्रित मंच।">A learning-first platform for stock market education in Hindi and English.</p></div>
+      <div class="footer-links"><a href="#about">About</a><a href="#learn">Learning</a><a href="#principles">Our approach</a><a href="#contact">Contact</a></div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Mishra Market Academy. All rights reserved. <span data-en="Built for learning." data-hi="सीखने के लिए बनाया गया।">Built for learning.</span></div>
+  </div>
+</footer>
+<script>
+  let currentLang = "en";
+  const langToggle = document.getElementById("langToggle");
+  langToggle.addEventListener("click", () => {
+    currentLang = currentLang === "en" ? "hi" : "en";
+    document.documentElement.lang = currentLang;
+    document.querySelectorAll("[data-en][data-hi]").forEach(el => {
+      el.innerHTML = el.getAttribute("data-" + currentLang);
+    });
+    langToggle.textContent = currentLang === "en" ? "हिंदी" : "English";
+  });
+  document.getElementById("menuBtn").addEventListener("click", () => {
+    document.getElementById("navLinks").classList.toggle("open");
+  });
+  document.querySelectorAll(".nav-links a").forEach(link => link.addEventListener("click", () => {
+    document.getElementById("navLinks").classList.remove("open");
+  }));
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
